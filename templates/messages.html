@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Comments
+        </title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+
+        <!-- Write the title of the page in a large heading font -->
+        <h1>
+            Comments
+        </h1>
+        <!-- Show the navbar -->
+        <div>
+            {% include "navbar.html" %}
+        </div>
+
+        {% if session %}
+            Hello {{ user.name }}! Please add a message.
+            <form action="{{ url_for('messages') }}" method="POST">
+
+                Username
+                <input type="text"
+                       name="username"
+                       value="{{ user.username }}"
+                       readonly>
+                <br />
+
+                Message text:
+                <input type="text" name="text" placeholder="">
+                <br />
+
+                <input type="submit" value="Submit">
+
+            </form>
+
+        {% else %}
+            Please login to leave a message! :~)
+        {% endif %}
+
+        <br />
+
+        All messages:
+
+        {% for message in messages %}
+        	<div>
+        		<ul>
+        			<li>
+                        User: {{ message.user.name }}
+                    </li>
+        			<li>
+                        Message: {{ message.text }}
+                    </li>
+        		</ul>
+        	</div>
+        {% endfor %}
+
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Login Page
+        </title>
+        
+              <link type="text/css" href="{{url_for('static', filename='login.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Write the title of the page in a large heading font -->
+        <h1>
+            Welcome to your first step to recovery
+        </h1>
+
+            {% include 'navbar.html' %}
+
+
+        <!-- Check to see if the user is logged in. If so, the username will
+            be set inside the session. -->
+        {% if session.username %}
+            <p>
+                You are already logged in!
+            </p>
+            <a href="{{ url_for('profile') }}">Go to Profile</a>
+        {% else %}
+            <!-- Show the login form -->
+            <form action="/login" method="POST">
+
+                <p>Enter Username:</p>
+                <p><input type="text" name="username" /></p>
+
+                <p>Enter Password:</p>
+                <p><input type="password" name="password" /></p>
+
+                <!-- Submit button -->
+                <p>
+                    <input type="submit" value="submit" />
+                </p>
+
+            </form>
+
+            Don't have an account?
+            Click here to <a href="{{ url_for('signup') }}">signup</a> instead.
+        {% endif %}
+        
+<img src="{{url_for('static', filename='recovery(1).jpg')}}"width= "600px";height= "550px">
+<br>
+        
+    </body>
+</html>

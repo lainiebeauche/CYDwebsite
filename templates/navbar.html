@@ -1,0 +1,16 @@
+<div class= "navbar">
+    <div class= "links">
+        {% if session %}
+        {% else %}
+        <ul><a href= "{{url_for('login')}}">login</a></ul>
+        <ul><a href= "{{url_for('signup')}}"> signup</a></ul>
+        {% endif %}
+        <ul><a href= "{{url_for('home')}}"> Home</a></ul>
+        <ul><a href="{{url_for('about')}}">About</a></ul>
+        <ul><a href="{{url_for('programs')}}">Programs</a></ul>
+        <ul><a href="{{url_for('extended_resources')}}">Extended Resources</a></ul>
+        {% if session %}
+        <ul><a href= "{{url_for('logout')}}">logout</a></ul>
+        {% endif %}
+    </div>
+</div>

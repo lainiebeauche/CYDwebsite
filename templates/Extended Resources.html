@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Extended Resources
+        </title>
+              <link type="text/css" href="../static/Extended Resources.css" rel="stylesheet">
+              <link type="text/css" href="{{ url_for('static', filename='Extended Resources.css')}}" rel="stylesheet">
+    </head>
+    <body>
+    
+
+        <h1><img src="{{url_for('static', filename='recovery ribbon.jpg')}}" align="center" width="250px";height=290px;>
+IT IS NEVER TOO LATE!! </h1>
+
+    {% include 'navbar.html' %}
+
+ 
+<p> Extended Resources</p>       
+
+        <div>
+        </div>
+        <br>
+        <br>
+
+{% if session %}
+
+
+      <p>  This page will link you to my other site that has other resources for our community."</p>
+
+    <br>
+    <br>
+<div class="grid-container">
+
+    <img src="{{url_for('static', filename='support lgbtq.webp')}}"width= "150px";height= "200px" class= "img">
+
+
+<img src="{{url_for('static', filename='recovery_quote(1).jpg')}}"width= "150px";height= "200px" class="img">
+
+<a href="https://bravecourse.github.io/we-are-all-human/">
+<img src="{{url_for('static', filename='we are all human.jpg')}}"width= "200px";height= "150px" class="img"></a>
+
+<a href="https://www.mass.gov/files/documents/2023/01/04/MAAG_LGBTQ2IA%2BMentalHealthGenderAffirmingCare_web%20%281%29.pdf">
+    <img src="{{url_for('static', filename='mass_gov_logo(1).png')}}"width="200px"height="150px" class="img"></a>
+    
+     <a href="https://www.mass.gov/files/documents/2023/01/04/MAAG_LGBTQ2IA%2BMentalHealthGenderAffirmingCare_web%20%281%29.pdf">
+    <img src="{{url_for('static', filename='thriving_center_logo(1).jpg')}}" width="200px"height="150px" class="img"></a>   
+
+    <img src="{{url_for('static', filename='zencare_logo(1).png')}}"width="300px"height="200px" class="img">
+
+{% else %}
+Please log in to access extended resources!
+{% endif %}
+</body>
+</html>
+  </div>
+
+
